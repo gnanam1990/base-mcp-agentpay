@@ -103,7 +103,12 @@ const seedServices: AgentPayService[] = [
 ];
 
 function dbPath() {
-  return process.env.AGENTPAY_DATA_FILE || path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "agentpay-db.json");
+  if (process.env.AGENTPAY_DATA_FILE) {
+    return process.env.AGENTPAY_DATA_FILE;
+  }
+  return process.env.VERCEL
+    ? path.join("/tmp", "agentpay-db.json")
+    : path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "agentpay-db.json");
 }
 
 function readDb(): AgentPayDb {
