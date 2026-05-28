@@ -4,12 +4,12 @@ import type { AgentPayService } from "./agentpay-store";
 export function paymentRequirement(service: AgentPayService, resourceUrl: string) {
   return {
     scheme: "exact" as const,
-    network: process.env.AGENTPAY_X402_NETWORK || "eip155:84532",
+    network: process.env.AGENTPAY_X402_NETWORK || "eip155:8453",
     asset: "USDC" as const,
     amount: service.priceUsdc.toFixed(2),
     payTo: process.env.X402_RECEIVING_ADDRESS || service.providerAddress,
     resource: resourceUrl,
-    description: `Call ${service.name} for ${service.priceUsdc.toFixed(2)} USDC on Base Sepolia.`,
+    description: `Call ${service.name} for ${service.priceUsdc.toFixed(2)} USDC on Base mainnet.`,
   };
 }
 

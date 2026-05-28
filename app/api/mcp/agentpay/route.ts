@@ -45,7 +45,7 @@ export async function POST(request: Request) {
           slug: service.slug,
           priceUsdc: service.priceUsdc,
           resource: `/api/agentpay/services/${service.slug}/call`,
-          network: process.env.AGENTPAY_X402_NETWORK || "eip155:84532",
+          network: process.env.AGENTPAY_X402_NETWORK || "eip155:8453",
         },
       });
     }
