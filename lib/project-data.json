@@ -1,0 +1,58 @@
+{
+  "repo": "base-mcp-agentpay",
+  "name": "AgentPay",
+  "shortName": "AP",
+  "api": "agentpay",
+  "category": "x402 API Marketplace",
+  "tagline": "Agent-native API discovery, comparison, and x402 payment on Base.",
+  "status": "Marketplace MVP foundation",
+  "mission": "Give AI agents a clean catalog of paid APIs they can discover, price-check, and call through x402 without custom billing accounts.",
+  "primaryAction": "Register API",
+  "secondaryAction": "Run paid call",
+  "metrics": [
+    {
+      "label": "Listed APIs",
+      "value": "12",
+      "tone": "blue"
+    },
+    {
+      "label": "Paid calls",
+      "value": "284",
+      "tone": "green"
+    },
+    {
+      "label": "Provider revenue",
+      "value": "$42.60",
+      "tone": "amber"
+    }
+  ],
+  "workflow": [
+    "Provider lists an API with schema, price, and Base receiving address.",
+    "Agent searches by task, price, latency, and health score.",
+    "x402 challenge is created for the selected API call.",
+    "Base Account approval unlocks the response and records a receipt."
+  ],
+  "tools": [
+    "search_agentpay_services",
+    "get_service_quote",
+    "prepare_x402_call",
+    "get_provider_stats"
+  ],
+  "records": [
+    [
+      "Sentiment API",
+      "0.02 USDC",
+      "99.2% healthy"
+    ],
+    [
+      "Market Pulse",
+      "0.05 USDC",
+      "187 calls"
+    ],
+    [
+      "Image Prompt Score",
+      "0.03 USDC",
+      "42 providers"
+    ]
+  ]
+}
