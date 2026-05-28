@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
-import projectData from "@/lib/project-data.json";
+import { dashboardData, marketplaceStats } from "@/lib/agentpay-store";
 
 export function GET() {
   return NextResponse.json({
-    data: projectData,
+    data: dashboardData(),
+    stats: marketplaceStats(),
     status: "mvp_foundation_ready",
   });
 }
