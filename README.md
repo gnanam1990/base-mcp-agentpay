@@ -1,30 +1,34 @@
 # AgentPay
 
-x402 API marketplace for AI agents.
+Agent-native API discovery, comparison, and x402 payment on Base.
 
-**Status:** Planned second build after PayGate foundation.
+**Status:** Marketplace MVP foundation
 
-AgentPay is a registry where developers list x402-enabled APIs and agents discover, compare, pay for, and call services with USDC on Base.
+Give AI agents a clean catalog of paid APIs they can discover, price-check, and call through x402 without custom billing accounts.
 
-## Why It Exists
-Base MCP gives AI assistants access to Base Account actions such as balances, sends, swaps, contract calls, and x402 payments, with user approval for writes. This project turns that capability into a focused product for API providers, AI-agent builders, and developers who want pay-per-call services without API keys.
+## Current MVP
+- Base industrial-neon UI theme from the shared suite prompt.
+- Responsive dashboard with wallet/action controls, metrics, workflow, MCP tools, and live record surface.
+- Product status API at `/api/agentpay/status`.
+- Smoke checks for required dashboard data.
 
-## Core Capabilities
-- Provider onboarding for API listings, pricing, docs, categories, and health checks.
-- Agent-facing discovery API and MCP tools for search and paid invocation.
-- Sample x402 APIs for weather, sentiment, market data, and summarization.
-- Usage and earnings dashboards for API providers.
-- Quality signals for uptime, latency, price, and successful paid calls.
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-## Roadmap Snapshot
-1. Build marketplace shell and provider listing CRUD.
-2. Implement service discovery API and public catalog.
-3. Add x402 invocation proxy with max-payment enforcement.
-4. Publish sample paid APIs and MCP discovery/pay tools.
-5. Launch provider analytics, docs, demo video, and public Base mainnet flow.
+Open `http://127.0.0.1:3000`.
 
-## Repository Status
-This repository is public from day one. It starts with product, architecture, roadmap, and demo documentation. Implementation commits should stay small and use conventional commit prefixes.
+## Checks
+```bash
+npm run typecheck
+npm run build
+npm run test:smoke
+```
+
+## Next Build Slice
+Wire the mocked dashboard data into real Base Sepolia reads, x402 payment verification, or contract prepare endpoints depending on this product's launch path.
 
 ## License
 MIT
